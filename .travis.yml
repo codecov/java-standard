@@ -8,3 +8,4 @@ script:
   - ./gradlew build
   - ./gradlew test
   - bash <(curl -s https://codecov.io/bash)
+  - python request.py
