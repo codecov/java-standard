@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/codecov/java-Standard.svg?branch=master)](https://travis-ci.org/codecov/java-Standard) [![codecov](https://codecov.io/gh/codecov/java-Standard/branch/master/graph/badge.svg)](https://codecov.io/gh/codecov/java-Standard)
 
-### Last Updated: 10/30/19 17:19:52
+### Last Updated: 10/31/19 17:19:52
 
 ## What is this?
 
