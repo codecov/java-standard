@@ -7,6 +7,11 @@ This project is written in **Java** and is built using **Gradle**. Unit test are
 
 ## Local usage
 
+Run the project
+```
+./gradlew run
+```
+
 Build the project
 ```
 ./gradlew build
