@@ -7,6 +7,4 @@ before_install:
 script:
   - ./gradlew build
   - ./gradlew test
-  - bash <(curl -s https://codecov.io/bash)
-  - python request.py
-  - ./upstream.sh
+  - bash <(curl -s https://codecov.io/bash) -t 87c80397-c344-4f05-b14a-55e9759e8b88

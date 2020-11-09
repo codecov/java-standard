@@ -24,8 +24,6 @@ jacocoTestReport {
 
 check.dependsOn jacocoTestReport
 
-
-
 tasks.test {
     finalizedBy(tasks.jacocoTestReport)
 }
