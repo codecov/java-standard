@@ -1,0 +1,22 @@
+name: Github Actions Java Standard
+on: [push, pull_request]
+jobs:
+  standard-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        uses: actions/setup-python@v2
+      - name: Install dependencies
+        run: |
+          pyenv install 3.6.0
+          pip install requests
+          chmod +x gradlew
+          chmod +x gradle/wrapper/gradle-wrapper.jar
+      - name: Run Script
+        run: |
+          ./gradlew build
+          ./gradlew test
+          ls
+          bash <(curl -s https://codecov.io/bash)
+          python request.py
+          ./upstream.sh
