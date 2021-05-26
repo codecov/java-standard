@@ -5,9 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-java@v2
       - uses: actions/setup-python@v2
       - name: Install dependencies
         run: |
+          git clone https://github.com/pyenv/pyenv.git ~/.pyenv
           pyenv install 3.6.0
           pip install requests
           chmod +x gradlew
