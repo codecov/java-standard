@@ -4,7 +4,6 @@
 COVERAGE_SOURCE_FILE=build/reports/jacoco/test/jacocoTestReport.xml
 
 # -=- Nothing below here should need to be changed -=-
-ls
 
 echo "Starting the coverage data push to the standards repo..."
 echo "Generating the SHA.txt file"
@@ -25,8 +24,7 @@ cp ../$PROJECT_NAME/SHA.txt $COVERAGE_DEST_DIR/
 echo "Commiting and pushing the coverage data to the standards repo."
 git config --global user.email "devops@codecov.local"
 git config --global user.name "Codecov Devops"
-git status
 git add coverage_data
 git commit -m "Updating coverage data for $PROJECT_NAME with SHA $COVERAGE_SHA"
-# git push origin --force
-# echo "Push to upstream complete!"
+git push origin --force
+echo "Push to upstream complete!"
