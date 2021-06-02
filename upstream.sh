@@ -4,6 +4,7 @@
 COVERAGE_SOURCE_FILE=cbuild/reports/jacoco/test/jacocoTestReport.xml
 
 # -=- Nothing below here should need to be changed -=-
+ls
 
 echo "Starting the coverage data push to the standards repo..."
 echo "Generating the SHA.txt file"
