@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Update this to the coverage file you want to upload to the standards repo
-COVERAGE_SOURCE_FILE=cbuild/reports/jacoco/test/jacocoTestReport.xml
+COVERAGE_SOURCE_FILE=build/reports/jacoco/test/jacocoTestReport.xml
 
 # -=- Nothing below here should need to be changed -=-
 ls
@@ -25,6 +25,7 @@ cp ../$PROJECT_NAME/SHA.txt $COVERAGE_DEST_DIR/
 echo "Commiting and pushing the coverage data to the standards repo."
 git config --global user.email "devops@codecov.local"
 git config --global user.name "Codecov Devops"
+git status
 git add coverage_data
 git commit -m "Updating coverage data for $PROJECT_NAME with SHA $COVERAGE_SHA"
 # git push origin --force
