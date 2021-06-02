@@ -3,7 +3,7 @@
 # Update this to the coverage file you want to upload to the standards repo
 COVERAGE_SOURCE_FILE=build/reports/jacoco/test/jacocoTestReport.xml
 
-# -=- Nothing below here should need to be changed -=-
+# -=- Nothing below here should need to be changed -=- 
 
 echo "Starting the coverage data push to the standards repo..."
 echo "Generating the SHA.txt file"
