@@ -1,12 +1,11 @@
 name: Github Actions Java Standard
-on: [push]
-# on:
-#   push:
-#     branches:
-#       - master
-#   pull_request:
-#     branches:
-#       - master
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 jobs:
   standard-upload:
     runs-on: ubuntu-latest
@@ -28,7 +27,7 @@ jobs:
           pip install requests
           chmod +x gradlew
           chmod +x gradle/wrapper/gradle-wrapper.jar
-      - name: Run Script
+      - name: Run Tests
         env:
           API_KEY: ${{ secrets.API_KEY }}
           EXPECTED_COVERAGE: ${{ secrets.EXPECTED_COVERAGE }}
