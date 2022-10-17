@@ -3,7 +3,7 @@
 [![Workflow for Java Standard Action](https://github.com/codecov/java-standard/actions/workflows/java-standard.yml/badge.svg)](https://github.com/codecov/java-standard/actions/workflows/java-standard.yml)  [![codecov](https://codecov.io/gh/codecov/java-Standard/branch/master/graph/badge.svg)](https://codecov.io/gh/codecov/java-Standard)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcodecov%2Fjava-standard.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcodecov%2Fjava-standard?ref=badge_shield)
 
-### Last Updated: 10/16/22 00:23:33
+### Last Updated: 10/17/22 00:22:57
 
 ## What is this?
 
