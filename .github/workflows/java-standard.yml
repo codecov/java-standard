@@ -2,10 +2,10 @@ name: Github Actions Java Standard
 on:
   push:
     branches:
-      - ain
+      - main
   pull_request:
     branches:
-      - ain
+      - main
 jobs:
   standard-upload:
     runs-on: ubuntu-latest
