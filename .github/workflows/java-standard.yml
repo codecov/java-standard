@@ -2,21 +2,19 @@ name: Github Actions Java Standard
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 jobs:
   standard-upload:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
-      - name: Set up Python 3.9
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.10
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9'
+          python-version: '3.10'
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
@@ -27,15 +25,19 @@ jobs:
           pip install requests
           chmod +x gradlew
           chmod +x gradle/wrapper/gradle-wrapper.jar
-      - name: Run Tests
-        env:
-          API_KEY: ${{ secrets.API_KEY }}
-          EXPECTED_COVERAGE: ${{ secrets.EXPECTED_COVERAGE }}
+      - name: Run tests
         run: |
           ./gradlew build
           ./gradlew test
-          bash <(curl -s https://codecov.io/bash)
-          python request.py
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_ORG_TOKEN }}
+      - name: Check coverage
+        run: python request.py
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          EXPECTED_COVERAGE: ${{ secrets.EXPECTED_COVERAGE }}
       - name: Upstream to Standards
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
